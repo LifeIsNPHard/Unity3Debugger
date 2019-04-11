@@ -36,4 +36,20 @@ public static class Debugger
             Debug.LogException(e, context);
         }
     }
+
+    public static void Assert(bool condition, object message = null, UnityEngine.Object context = null)
+    {
+        if (MustLog)
+        {
+            Debug.Assert(condition, message, context);
+        }
+    }
+
+    public static void Break()
+    {
+        if (MustLog)
+        {
+            Debug.Break();
+        }
+    }
 }
