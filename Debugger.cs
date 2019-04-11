@@ -1,38 +1,39 @@
+using System;
 using UnityEngine;
 
 public static class Debugger
 {
     public static bool MustLog => Debug.isDebugBuild;
 
-    public static void Log(string message, Object obj = null)
+    public static void Log(object message, UnityEngine.Object context = null)
     {
         if (MustLog)
         {
-            Debug.Log(message, obj);
+            Debug.Log(message, context);
         }
     }
 
-    public static void LogWarning(string message, Object obj = null)
+    public static void LogWarning(object message, UnityEngine.Object context = null)
     {
         if (MustLog)
         {
-            Debug.LogWarning(message, obj);
+            Debug.LogWarning(message, context);
         }
     }
 
-    public static void LogError(string message, Object obj = null)
+    public static void LogError(object message, UnityEngine.Object context = null)
     {
         if (MustLog)
         {
-            Debug.LogError(message, obj);
+            Debug.LogError(message, context);
         }
     }
 
-    public static void LogException(System.Exception e, Object obj = null)
+    public static void LogException(Exception e, UnityEngine.Object context = null)
     {
         if (MustLog)
         {
-            Debug.LogException(e, obj);
+            Debug.LogException(e, context);
         }
     }
 }
