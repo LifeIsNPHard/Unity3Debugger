@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class Debugger
 {
-    public static bool MustLog => Debug.isDebugBuild;
+    public static bool MustLog => PlayerPrefs.GetInt("MustLog", Debug.isDebugBuild ? 1 : 0) == 1;
 
     public static void Log(object message, UnityEngine.Object context = null)
     {
