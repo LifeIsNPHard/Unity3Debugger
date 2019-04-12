@@ -31,25 +31,16 @@ public static class Debugger
 
     public static void LogException(Exception e, UnityEngine.Object context = null)
     {
-        if (MustLog)
-        {
-            Debug.LogException(e, context);
-        }
+        Debug.LogException(e, context);
     }
 
     public static void Assert(bool condition, object message = null, UnityEngine.Object context = null)
     {
-        if (MustLog)
-        {
-            Debug.Assert(condition, message, context);
-        }
+        Debug.Assert(condition, message, context);
     }
 
     public static void Break()
     {
-        if (MustLog)
-        {
-            Debug.Break();
-        }
+        Debug.Break();
     }
 }
