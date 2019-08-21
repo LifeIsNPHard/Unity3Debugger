@@ -5,6 +5,10 @@ public static class Debugger
 {
     public static bool MustLog => PlayerPrefs.GetInt("MustLog", Debug.isDebugBuild ? 1 : 0) == 1;
 
+    public static void SetLogState(bool mustLog){
+        PlayerPrefs.SetInt("MustLog", mustLog ? 1 : 0);
+    }
+
     public static void Log(object message, UnityEngine.Object context = null)
     {
         if (MustLog)
